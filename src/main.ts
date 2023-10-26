@@ -5,13 +5,18 @@ import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // 样式
 import "@/style/index.scss"
+// svg图标
+import 'virtual:svg-icons-register'
+// 全局组件
+import gloablComponent from "@/components/index"
+// 路由
+import router from './router'
 import App from '@/App.vue'
 
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })
-import 'virtual:svg-icons-register'
-import gloablComponent from "@/components/index"
-app.use(gloablComponent)
-app.mount('#app')
+  .use(gloablComponent)
+  .use(router)
+  .mount('#app')
